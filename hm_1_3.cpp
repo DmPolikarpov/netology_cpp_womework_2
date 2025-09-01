@@ -24,6 +24,8 @@ public:
     }
 };
 
+void showAddress(Address& address);
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -51,8 +53,13 @@ int main()
 
     Address address{ town, street, building, flat, index };
 
-    address.printData();
+    showAddress(address);
 
 
     return EXIT_SUCCESS;
+}
+
+void showAddress(Address& address)
+{
+    address.printData();
 }
