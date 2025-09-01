@@ -2,7 +2,7 @@
 
 int getMonth(int month);
 
-enum Months { Прощай, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь };
+enum Months { BYE, JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER };
 
 int main()
 {
@@ -31,43 +31,43 @@ int getMonth(int monthNumber)
 
     switch (months)
     {
-    case Январь:
+    case JANUARY:
         std::cout << "Январь" << std::endl;
         break;
-    case Февраль:
+    case FEBRUARY:
         std::cout << "Февраль" << std::endl;
         break;
-    case Март:
+    case MARCH:
         std::cout << "Март" << std::endl;
         break;
-    case Апрель:
+    case APRIL:
         std::cout << "Апрель" << std::endl;
         break;
-    case Май:
+    case MAY:
         std::cout << "Май" << std::endl;
         break;
-    case Июнь:
+    case JUNE:
         std::cout << "Июнь" << std::endl;
         break;
-    case Июль:
+    case JULY:
         std::cout << "Июль" << std::endl;
         break;
-    case Август:
+    case AUGUST:
         std::cout << "Август" << std::endl;
         break;
-    case Сентябрь:
+    case SEPTEMBER:
         std::cout << "Сентябрь" << std::endl;
         break;
-    case Октябрь:
+    case OCTOBER:
         std::cout << "Октябрь" << std::endl;
         break;
-    case Ноябрь:
+    case NOVEMBER:
         std::cout << "Ноябрь" << std::endl;
         break;
-    case Декабрь:
+    case DECEMBER:
         std::cout << "Декабрь" << std::endl;
         break;
-    case Прощай:
+    case BYE:
         std::cout << "До свидания" << std::endl;
         result = 1;
         break;
