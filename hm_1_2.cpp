@@ -16,11 +16,13 @@ public:
         std::cout << "¬аш счет: " << " " << name << ", " << accountNumber << ", " << balance << std::endl;
     }
 
-    void changeBalance(float value)
+    void setBalance(float value)
     {
         balance = value;
     }
 };
+
+void changeBalance(Client& client, float balance);
 
 int main()
 {
@@ -44,10 +46,15 @@ int main()
     std::cout << "¬ведите новый баланс: ";
     std::cin >> balance;
 
-    client.changeBalance(balance);
+    changeBalance(client, balance);
 
     client.printData();
 
 
     return EXIT_SUCCESS;
+}
+
+void changeBalance(Client& client, float balance)
+{
+    client.setBalance(balance);
 }
