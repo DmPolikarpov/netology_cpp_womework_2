@@ -69,7 +69,7 @@ public:
     };
 
     bool isCorrect() {
-        return getAngle3() == 90 ? true : false;
+        return Triangle::isCorrect() && getAngle3() == 90 ? true : false;
     };
 };
 
@@ -80,7 +80,7 @@ public:
     {
     };
     bool isCorrect() {
-        return getAngle1() == getAngle3() && getSide1() == getSide3() ? true : false;
+        return Triangle::isCorrect() && getAngle1() == getAngle3() && getSide1() == getSide3() ? true : false;
     };
 };
 
@@ -91,7 +91,7 @@ public:
     {
     };
     bool isCorrect() {
-        return getAngle1() == 60 && getAngle3() == 60 && getAngle2() == 60 && getSide1() == getSide2() && getSide1() == getSide3() && getSide2() == getSide3() ? true : false;
+        return IsoscelesTriangle::isCorrect() && getAngle1() == 60 && getAngle3() == 60 && getAngle2() == 60 && getSide1() == getSide2() && getSide1() == getSide3() && getSide2() == getSide3() ? true : false;
     };
 };
 
@@ -161,7 +161,7 @@ public:
     {
     };
     bool isCorrect() {
-        return getAngle1() == 90 && getAngle2() == 90 && getAngle3() == 90 && getAngle4() == 90 && getSide1() == getSide3() && getSide2() == getSide4() ? true : false;
+        return Quadrangle::isCorrect() && getAngle1() == 90 && getAngle2() == 90 && getAngle3() == 90 && getAngle4() == 90 && getSide1() == getSide3() && getSide2() == getSide4() ? true : false;
     };
 };
 
@@ -172,7 +172,7 @@ public:
     {
     };
     bool isCorrect() {
-        return getAngle1() == 90 && getAngle2() == 90 && getAngle3() == 90 && getAngle4() == 90 &&
+        return Rectangle1::isCorrect() && getAngle1() == 90 && getAngle2() == 90 && getAngle3() == 90 && getAngle4() == 90 &&
             getSide1() == getSide2() && getSide1() == getSide3() && getSide1() == getSide4() &&
             getSide2() == getSide3() && getSide2() == getSide4() &&
             getSide3() == getSide4() ? true : false;
@@ -186,7 +186,7 @@ public:
     {
     };
     bool isCorrect() {
-        return getAngle1() == getAngle3() && getAngle2() == getAngle4() && getSide1() == getSide3() && getSide2() == getSide4() ? true : false;
+        return Quadrangle::isCorrect() && getAngle1() == getAngle3() && getAngle2() == getAngle4() && getSide1() == getSide3() && getSide2() == getSide4() ? true : false;
     };
 };
 
@@ -197,7 +197,7 @@ public:
     {
     };
     bool isCorrect() {
-        return getAngle1() == getAngle3() && getAngle2() == getAngle4() &&
+        return Parallelogram::isCorrect() && getAngle1() == getAngle3() && getAngle2() == getAngle4() &&
             getSide1() == getSide2() && getSide1() == getSide3() && getSide1() == getSide4() &&
             getSide2() == getSide3() && getSide2() == getSide4() &&
             getSide3() == getSide4() ? true : false;
