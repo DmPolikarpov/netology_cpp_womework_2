@@ -4,38 +4,30 @@
 class Shape
 {
 private:
-    int sides{ 0 };
-
-protected:
-    void setSidesNumber(int value) { sides = value; };
+    int sides;
 
 public:
+    Shape(int sides) : sides(sides) {};
     int getSidesNumber() { return sides; };
 };
 
 class Triangle : public Shape
 {
 public:
-    Triangle()
-    {
-        setSidesNumber(3);
-    }
+    Triangle() : Shape(3) {};
 };
 
 class Quadrangle : public Shape
 {
 public:
-    Quadrangle()
-    {
-        setSidesNumber(4);
-    }
+    Quadrangle() : Shape(4) {};
 };
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
     
-    Shape shape{};
+    Shape shape{0};
     Triangle triangle{};
     Quadrangle quadrangle{};
 
