@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 class Fraction
 {
@@ -15,12 +16,12 @@ public:
 
 	double division() { return numerator_ / denominator_; };
 
-	bool operator==(Fraction other) { return division() == other.division(); };
-	bool operator!=(Fraction other) { return division() != other.division(); };
+	bool operator==(Fraction other) { return fabs(division() - other.division() ) <= std::numeric_limits<double>::epsilon(); };
+	bool operator!=(Fraction other) { return fabs(division() - other.division()) > std::numeric_limits<double>::epsilon(); };
 	bool operator<(Fraction other) { return division() < other.division(); };
 	bool operator>(Fraction other) { return division() > other.division(); };
-	bool operator<=(Fraction other) { return division() <= other.division(); };
-	bool operator>=(Fraction other) { return division() >= other.division(); };
+	bool operator<=(Fraction other) { return division() < other.division() || fabs(division() - other.division()) <= std::numeric_limits<double>::epsilon(); };
+	bool operator>=(Fraction other) { return division() > other.division() || fabs(division() - other.division()) <= std::numeric_limits<double>::epsilon(); };
 };
 
 int main()
