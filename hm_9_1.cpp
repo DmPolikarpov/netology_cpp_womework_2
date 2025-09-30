@@ -16,12 +16,15 @@ public:
 
 	double division() { return numerator_ / denominator_; };
 
-	bool operator==(Fraction other) { return fabs(division() - other.division() ) <= std::numeric_limits<double>::epsilon(); };
-	bool operator!=(Fraction other) { return fabs(division() - other.division()) > std::numeric_limits<double>::epsilon(); };
-	bool operator<(Fraction other) { return division() < other.division(); };
-	bool operator>(Fraction other) { return division() > other.division(); };
-	bool operator<=(Fraction other) { return division() < other.division() || fabs(division() - other.division()) <= std::numeric_limits<double>::epsilon(); };
-	bool operator>=(Fraction other) { return division() > other.division() || fabs(division() - other.division()) <= std::numeric_limits<double>::epsilon(); };
+	bool isEqualed(Fraction other) { return fabs(division() - other.division()) <= std::numeric_limits<double>::epsilon(); };
+	bool isBigger(Fraction other) { return division() > other.division(); };
+
+	bool operator==(Fraction other) { return isEqualed(other); };
+	bool operator!=(Fraction other) { return !isEqualed(other); };
+	bool operator<(Fraction other) { return !isBigger(other); };
+	bool operator>(Fraction other) { return isBigger(other); };
+	bool operator<=(Fraction other) { return !isBigger(other) || isEqualed(other); };
+	bool operator>=(Fraction other) { return isBigger(other) || isEqualed(other); };
 };
 
 int main()
